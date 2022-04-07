@@ -1,0 +1,18 @@
+@import "./utils/variables";
+
+@import "./base/normalize";
+@import "./base/typographie";
+
+@import "../../fontawesome/scss/fontawesome.scss";
+@import "../../fontawesome/scss/solid.scss";
+@import "../../fontawesome/scss/brands.scss";
+
+@import "./layouts/home";
+@import "./layouts/about";
+@import "./layouts/choose";
+@import "./layouts/features";
+@import "./layouts/luxury";
+@import "./layouts/offers";
+@import "./layouts/icons";
+@import "./layouts/footer";
+

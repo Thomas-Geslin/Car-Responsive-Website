@@ -1,0 +1,62 @@
+.footer {
+    background-color: #000;
+    color: $color-text;
+    padding-top: 50px;
+    padding-bottom: 100px;
+        &__link {
+            display: flex;
+            width: 60%;
+            justify-content: space-between;
+            margin: auto;
+                &__div {
+                    flex-direction: column;
+                    width: 45%;
+                        &--entreprise {
+                            margin-right: 150px;
+                        }
+                        &__logo {
+                            display: flex;
+                            align-items: center;
+                                &__img {
+                                    width: 32px;
+                                    height: 32px;
+                                    margin-right: 5px;
+                                }
+                                &:hover {
+                                    color: #3A6BC3;
+                                    transition: .5s;
+                                }
+                        }
+                        &__text {
+                            color: $color-text-third;
+                            margin-top: 0;
+                        }
+                        &__title {
+                            margin-bottom: 30px;
+                        }
+                        &__ul {
+                            padding: 0;
+                        }
+                        &__li {
+                            list-style: none;
+                            color: $color-text-third;
+                            margin-bottom: 15px;
+                                &:hover {
+                                    color: $color-text;
+                                    transition: .5s;
+                                    cursor: pointer;
+                                }
+                        }
+                        &__icon {
+                            color: $color-text-third;
+                            font-size: 22px;
+                            margin-left: 20px;
+                                &:hover {
+                                    color: $color-text;
+                                    transition: .5s;
+                                    cursor: pointer;
+                                }
+                        }
+                }
+        }
+}

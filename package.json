@@ -1,0 +1,15 @@
+{
+  "name": "responsive-car-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./assets/sass/scss/:./assets/sass/css/"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "font-awesome": "^4.7.0"
+  }
+}

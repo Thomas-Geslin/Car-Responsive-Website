@@ -1,0 +1,51 @@
+.features {
+    background-color: #000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+        &__map {
+            width: 800px;
+            position: absolute;
+            bottom: -200px;
+            right: 27%;
+            transform: rotate(-22deg);
+        }
+        &__car {
+            position: relative;
+            width: 200px;
+        }
+        &__card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            border-radius: 15px;
+            width: 127px;
+            padding: 15px 30px;
+            margin: auto;
+                &__number {
+                    font-size: 22px;
+                    font-weight: bold;
+                    margin-top: 5px;
+                    margin-bottom: 10px;
+                }
+                &__text {
+                    line-height: 22px;
+                    width: 50%;
+                    margin: auto;
+                }
+                &--01 {
+                    position: absolute;
+                    top: 200px;
+                    left: 740px;
+                }
+                &--02 {
+                    position: absolute;
+                    top: 37%;
+                    right: 38%;
+                }
+                &--03 {
+                    position: absolute;
+                    left: 740px;
+                    bottom: 215px;
+                }
+        }
+}

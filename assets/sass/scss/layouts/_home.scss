@@ -1,0 +1,131 @@
+.home {
+    background-color: #0A0A0B;
+    color: $color-text;
+        &__header {
+            height: 80px;
+            display: flex;
+            justify-content: space-around;
+            font-size: 16px;
+            font-weight: bold;
+            align-items: center;
+                &__logo {
+                    display: flex;
+                    align-items: center;
+                        &:hover {
+                            color: #3A6BC3;
+                            transition: .5s;
+                            cursor: pointer;
+                        }
+                        &__img {
+                            width: 25px;
+                            height: 25px;
+                            margin-right: 5px;
+                        }
+                }
+                & ul {
+                    width: 20%;
+                    display: flex;
+                    justify-content: space-between;
+                    list-style-type: none;
+                        & li:hover {
+                            color: #3A6BC3;
+                            transition: .5s;
+                            cursor: pointer;
+                        }
+                }
+        }
+        &__article {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+                &__title {
+                    margin-top: 80px;
+                    margin-bottom: 0;
+                }
+                &__car {
+                    font-size: 20px;
+                    margin-bottom: 7px;
+                    margin-top: 28px;
+                }
+                &__type {
+                    display: flex;
+                    align-items: baseline;
+                    margin: auto;
+                        &__icon {
+                            color: #3A6BC3;
+                            font-size: 12px;
+                            margin-right: 6px;
+                        }
+                        &__text {
+                            color: $color-text-third;
+                            margin-top: 0;
+                            margin-bottom: 50px;
+                        }
+                }
+                &__img {
+                    width: 380px;
+                    margin: auto;
+                }
+                &__info {
+                    width: 28%;
+                    display: flex;
+                    justify-content: space-around;
+                    margin: auto; 
+                    margin-top: 60px; 
+                        &__div {
+                            &__icon {
+                                color: $color-text-third;
+                                font-size: 15px;
+                            }
+                            &__number {
+                                font-size: 24px;
+                                font-weight: 500;
+                                margin-bottom: 8px;
+                            }
+                            &__text {
+                                text-transform: uppercase;
+                                font-size: 12px;
+                                color: $color-text-secondary;
+                            }
+                        }
+                }
+                &__button {
+                    margin: auto;
+                    background: transparent;
+                    color: $color-text;
+                    border-radius: 90px;
+                    border: #02D98A solid 2px;
+                    width: 70px;
+                    height: 70px;
+                    margin-top: 100px;
+                    margin-bottom: 100px;
+                        &::before {
+                            border: #02D98A 2px solid;
+                            width: 94px;
+                            height: 94px;
+                        }
+                }
+        }
+        &__bg {
+            &--01 {
+                width: 500px;
+                height: 500px;
+                position: absolute;
+                top: -50px;
+                left: -120px;
+                background-color: rgba(55, 74, 109, 0.5);
+                filter: blur(112px);
+                border-radius: 50%;
+            }
+            &--02 {
+                width: 500px;
+                height: 500px;
+                position: absolute;
+                top: 400px;
+                right: 0px;
+                background-color: rgba(55, 74, 109, 0.5);
+                filter: blur(112px);
+                border-radius: 50%; 
+            }
+        }
+}

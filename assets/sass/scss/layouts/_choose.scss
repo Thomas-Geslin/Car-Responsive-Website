@@ -1,0 +1,79 @@
+.choose {
+    background-color: #000;
+    color: white;
+    padding-top: 100px;
+    padding-bottom: 100px;
+        &__title {
+            font-size: 25px;
+            width: 20%;
+            margin: auto;
+            margin-bottom: 60px;
+        }
+        &__card {
+            background-color: hsl(219, 4%, 7%);
+            border-radius: 15px;
+            overflow: hidden;
+            width: 240px;
+            height: 305px;
+            margin: auto;
+            margin-top: 100px;
+            padding: 32px 24px 24px;
+            position: relative;
+                &__title {
+                    font-size: 26px;
+                    margin: 0;
+                    margin-top: 10px;
+                    color: white;
+                    position: relative;
+                }
+                &__subtitle {
+                    font-size: 17px;
+                    color: $color-text;
+                    margin-top: 5px;
+                }
+                &__img {
+                    width: 190px;
+                    display: block;
+                    margin: auto;
+                }
+                &__info {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-top: 20px;
+                    &__div {
+                        font-size: 14px;
+                        display: flex;
+                        align-items: center;
+                        width: 40%;
+                        height: 32px;
+                            &__icon {
+                                margin-right: 8px;
+                            }
+                    }
+                }
+                &__price {
+                    font-size: 22px;
+                    font-weight: bold;
+                    margin-top: 28px;
+                }
+                &__cart {
+                    font-size: 20px;
+                    background-color: $color-items;
+                    padding: 20px;
+                    border-radius: 15px 0 15px 0;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                }
+                &__cloud {
+                    border-radius: 50%;
+                    background-color: rgba(55, 74, 109, 0.5);
+                    filter: blur(64px);
+                    width: 180px;
+                    height: 180px;
+                    position: absolute;
+                    top: -50px;
+                    left: -50px;
+                }
+        }
+}

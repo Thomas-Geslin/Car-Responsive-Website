@@ -1,0 +1,60 @@
+.about {
+    background-color: #000000;
+    display: flex;
+    color: $color-text;
+    justify-content: center;
+    padding-top: 100px;
+        &__supercharge {
+            position: relative;
+            margin-bottom: 100px;
+                &__img {
+                    width: 480px;
+                    border-radius: 15px;
+                }
+                &__card {
+                background-color: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(16px);
+                border-radius: 15px;
+                text-align: center;
+                width: 198px;
+                padding: 20px 24px;
+                position: absolute;
+                right: 0;
+                bottom: -45px;
+                    &__number {
+                        font-size: 22px;
+                        font-weight: bold;
+                        margin-top: 0;
+                        margin-bottom: 12px;
+                    }
+                    &__text {
+                        font-size: 15px;
+                        color:  $color-text-third;
+                        margin: 0;
+                    }
+                }
+        }
+        &__info {
+            flex-direction: column;
+            margin-left: 70px;
+            width: 20%;
+                &__title {
+                    width: 70%;
+                    line-height: 35px;
+
+                }
+                &__text {
+                    color: $color-text-third;
+                    font-size: 18px;
+                    line-height: 23px;
+                    margin-bottom: 48px;
+                }
+                &__button {
+                    background-color: $color-items;
+                    padding: 16px 32px;
+                    border: none;
+                    border-radius: 5px;
+                    color: white;
+                }
+        }
+}
