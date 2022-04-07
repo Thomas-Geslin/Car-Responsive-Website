@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -21,6 +22,21 @@ html {
 body {
   margin: 0;
   font-family: "Exo", sans-serif;
+}
+
+/* Style de la barre de défilement */
+body::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 1rem;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #27282a;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #3b3c40;
+  border-radius: 1rem;
 }
 
 /**
@@ -8541,7 +8557,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url("../../webfonts/fa-solid-900.woff2") format("woff2"), url("../../webfonts/fa-solid-900.ttf") format("truetype");
+  src: url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.ttf") format("truetype");
 }
 .fas,
 .fa-solid {
@@ -8563,7 +8579,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("../../webfonts/fa-brands-400.woff2") format("woff2"), url("../../webfonts/fa-brands-400.ttf") format("truetype");
+  src: url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.ttf") format("truetype");
 }
 .fab,
 .fa-brands {
@@ -10456,7 +10472,7 @@ readers do not read off random characters that represent icons */
 }
 
 .home {
-  background-color: #0A0A0B;
+  background-color: #000;
   color: #F1F2F3;
 }
 .home__header {
@@ -10466,6 +10482,9 @@ readers do not read off random characters that represent icons */
   font-size: 16px;
   font-weight: bold;
   align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
 }
 .home__header__logo {
   display: flex;
@@ -10487,7 +10506,11 @@ readers do not read off random characters that represent icons */
   justify-content: space-between;
   list-style-type: none;
 }
-.home__header ul li:hover {
+.home__header ul a {
+  text-decoration: none;
+  color: #F1F2F3;
+}
+.home__header ul a:hover {
   color: #3A6BC3;
   transition: 0.5s;
   cursor: pointer;
@@ -10496,6 +10519,7 @@ readers do not read off random characters that represent icons */
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding-top: 80px;
 }
 .home__article__title {
   margin-top: 80px;
@@ -10562,6 +10586,9 @@ readers do not read off random characters that represent icons */
   width: 94px;
   height: 94px;
 }
+.home__article__button:hover {
+  cursor: pointer;
+}
 .home__bg--01 {
   width: 500px;
   height: 500px;
@@ -10583,6 +10610,60 @@ readers do not read off random characters that represent icons */
   border-radius: 50%;
 }
 
+.onscroll {
+  background-color: #0a0a0b;
+  border-radius: 0 0 15px 15px;
+  z-index: 1000;
+}
+
+[class*=revealHome-] {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+[class*=revealHomeBottom-] {
+  opacity: 0;
+  transform: translateY(80px);
+}
+
+.reveal_visible-home {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 2.5s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.revealHome-1 {
+  transition-delay: 0.2s;
+}
+
+.revealHome-2 {
+  transition-delay: 0.3s;
+}
+
+.revealHome-3 {
+  transition-delay: 0.4s;
+}
+
+.revealHome-4 {
+  transition-delay: 0.5s;
+}
+
+.revealHomeBottom-1 {
+  transition-delay: 0.6s;
+}
+
+.revealHomeBottom-2 {
+  transition-delay: 0.7s;
+}
+
+.revealHomeBottom-3 {
+  transition-delay: 0.8s;
+}
+
+.revealHomeBottom-4 {
+  transition-delay: 1s;
+}
+
 .about {
   background-color: #000000;
   display: flex;
@@ -10597,6 +10678,7 @@ readers do not read off random characters that represent icons */
 .about__supercharge__img {
   width: 480px;
   border-radius: 15px;
+  margin-right: 30px;
 }
 .about__supercharge__card {
   background-color: rgba(255, 255, 255, 0.1);
@@ -10606,7 +10688,7 @@ readers do not read off random characters that represent icons */
   width: 198px;
   padding: 20px 24px;
   position: absolute;
-  right: 0;
+  right: 30px;
   bottom: -45px;
 }
 .about__supercharge__card__number {
@@ -10643,6 +10725,22 @@ readers do not read off random characters that represent icons */
   color: white;
 }
 
+.revealLeft-1 {
+  opacity: 0;
+  transform: translateX(-75px);
+}
+
+.revealRight-1 {
+  opacity: 0;
+  transform: translateX(75px);
+}
+
+.reveal_visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: 2.5s cubic-bezier(0.5, 0, 0, 1);
+}
+
 .choose {
   background-color: #000;
   color: white;
@@ -10655,16 +10753,27 @@ readers do not read off random characters that represent icons */
   margin: auto;
   margin-bottom: 60px;
 }
+.choose__cards {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+}
 .choose__card {
   background-color: #111213;
   border-radius: 15px;
   overflow: hidden;
   width: 240px;
   height: 305px;
-  margin: auto;
   margin-top: 100px;
   padding: 32px 24px 24px;
   position: relative;
+}
+.choose__card:hover {
+  cursor: grab;
+}
+.choose__card:hover > img {
+  transform: translateY(-15px);
+  transition: 0.5s;
 }
 .choose__card__title {
   font-size: 26px;
@@ -10721,6 +10830,17 @@ readers do not read off random characters that represent icons */
   position: absolute;
   top: -50px;
   left: -50px;
+}
+
+.revealChoose-00 {
+  opacity: 0;
+  transform: translateY(-70px);
+}
+
+.reveal_visible-choose {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 2.5s cubic-bezier(0.5, 0, 0, 1);
 }
 
 .features {
@@ -10808,6 +10928,28 @@ readers do not read off random characters that represent icons */
   background-color: #4178DC;
   transition: 0.5s;
 }
+.luxury__cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: auto;
+  justify-content: space-between;
+}
+
+[class*=revealLuxury-] {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.reveal_visible-luxury {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 2.5s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.revealLuxury-2 {
+  transition-delay: 0.15s;
+}
 
 .offers {
   color: white;
@@ -10831,6 +10973,7 @@ readers do not read off random characters that represent icons */
 }
 .offers__info__text {
   color: #BABEC4;
+  width: 80%;
 }
 .offers__info__button {
   background-color: #4178DC;
@@ -10845,6 +10988,22 @@ readers do not read off random characters that represent icons */
   position: absolute;
   right: 400px;
   top: 140px;
+}
+
+.revealLeft-1 {
+  opacity: 0;
+  transform: translateX(-75px);
+}
+
+.revealRight-1 {
+  opacity: 0;
+  transform: translateX(75px);
+}
+
+.reveal_visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: 2.5s cubic-bezier(0.5, 0, 0, 1);
 }
 
 .icons {
@@ -10876,6 +11035,41 @@ readers do not read off random characters that represent icons */
 .icons__grid__img:hover {
   opacity: 1;
   transition: 0.5s;
+}
+
+[class*=revealIcon-] {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.reveal_visible-icon {
+  opacity: 0.4;
+  transform: translateY(0);
+  transition: 2.5s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.revealIcon-1 {
+  transition-delay: 0.2s;
+}
+
+.revealIcon-2 {
+  transition-delay: 0.3s;
+}
+
+.revealIcon-3 {
+  transition-delay: 0.4s;
+}
+
+.revealIcon-4 {
+  transition-delay: 0.5s;
+}
+
+.revealIcon-5 {
+  transition-delay: 0.6s;
+}
+
+.revealIcon-6 {
+  transition-delay: 0.7s;
 }
 
 .footer {
@@ -10939,6 +11133,33 @@ readers do not read off random characters that represent icons */
   color: #F1F2F3;
   transition: 0.5s;
   cursor: pointer;
+}
+
+[class*=revealFooter-] {
+  opacity: 0;
+  transform: translateY(-80px);
+}
+
+.reveal_visible-footer {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 2.5s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.revealFooter-1 {
+  transition-delay: 0.2s;
+}
+
+.revealFooter-2 {
+  transition-delay: 0.4s;
+}
+
+.revealFooter-3 {
+  transition-delay: 0.6s;
+}
+
+.revealFooter-4 {
+  transition-delay: 0.8s;
 }
 
 /*# sourceMappingURL=style.css.map */

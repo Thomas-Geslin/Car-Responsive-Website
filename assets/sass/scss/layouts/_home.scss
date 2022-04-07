@@ -1,5 +1,5 @@
 .home {
-    background-color: #0A0A0B;
+    background-color: #000;
     color: $color-text;
         &__header {
             height: 80px;
@@ -8,6 +8,9 @@
             font-size: 16px;
             font-weight: bold;
             align-items: center;
+            position: fixed;
+            left: 0;
+            right: 0;
                 &__logo {
                     display: flex;
                     align-items: center;
@@ -27,7 +30,11 @@
                     display: flex;
                     justify-content: space-between;
                     list-style-type: none;
-                        & li:hover {
+                        & a {
+                            text-decoration: none;
+                            color: $color-text;
+                        }
+                        & a:hover {
                             color: #3A6BC3;
                             transition: .5s;
                             cursor: pointer;
@@ -38,6 +45,7 @@
             display: flex;
             flex-direction: column;
             text-align: center;
+            padding-top: 80px;
                 &__title {
                     margin-top: 80px;
                     margin-bottom: 0;
@@ -104,6 +112,9 @@
                             width: 94px;
                             height: 94px;
                         }
+                        &:hover {
+                            cursor: pointer;
+                        }
                 }
         }
         &__bg {
@@ -128,4 +139,62 @@
                 border-radius: 50%; 
             }
         }
+}
+
+// Change le style du header au scroll
+.onscroll {
+    background-color: #0a0a0b;
+    border-radius: 0 0 15px 15px;
+    z-index: 1000;
+}
+
+// Apparition des éléments les uns après les autres
+// De haut en bas
+[class*="revealHome-"] {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+// De bas en haut
+[class*="revealHomeBottom-"] {
+    opacity: 0;
+    transform: translateY(80px);
+}
+
+.reveal_visible-home {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 2.5s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.revealHome-1 {
+    transition-delay: .2s;
+}
+
+.revealHome-2 {
+    transition-delay: .3s;
+}
+
+.revealHome-3  {
+    transition-delay: .4s;
+}
+
+.revealHome-4{
+    transition-delay: .5s;
+}
+
+.revealHomeBottom-1 {
+    transition-delay: .6s;
+}
+
+.revealHomeBottom-2 {
+    transition-delay: .7s;
+}
+
+.revealHomeBottom-3 {
+    transition-delay: .8s;
+}
+
+.revealHomeBottom-4 {
+    transition-delay: 1s;
 }

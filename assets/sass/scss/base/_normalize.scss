@@ -24,6 +24,21 @@
     margin: 0;
     font-family: 'Exo', sans-serif;
   }
+
+  /* Style de la barre de défilement */
+  body::-webkit-scrollbar {
+    width: 0.6rem;
+    border-radius: 1rem;
+  }
+
+  body::-webkit-scrollbar-track {
+    background-color: #27282a
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: #3b3c40;
+    border-radius: 1rem;
+}
   
   /**
    * Render the `main` element consistently in IE.

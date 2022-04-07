@@ -60,3 +60,31 @@
                 }
         }
 }
+
+// Apparition au défilement
+[class*="revealFooter-"] {
+    opacity: 0;
+    transform: translateY(-80px);
+}
+
+.reveal_visible-footer {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 2.5s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.revealFooter-1 {
+    transition-delay: .2s;
+}
+
+.revealFooter-2 {
+    transition-delay: .4s;
+}
+
+.revealFooter-3  {
+    transition-delay: .6s;
+}
+
+.revealFooter-4{
+    transition-delay: .8s;
+}
