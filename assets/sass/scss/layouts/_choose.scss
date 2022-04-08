@@ -9,11 +9,6 @@
             margin: auto;
             margin-bottom: 60px;
         }
-        &__cards {
-            display: flex;
-            justify-content: center;
-            justify-content: space-evenly;
-        }
         &__card {
             background-color: hsl(219, 4%, 7%);
             border-radius: 15px;
@@ -89,8 +84,26 @@
         }
 }
 
+// Styles du Swiper
+.swiper {
+    width: 50%;
+}
+
+.swiper-pagination{
+    padding-top: 30px;
+}
+
+.swiper-pagination-bullet{
+    background-color: #2D2E30;
+}
+
+.swiper-pagination-bullet-active{
+    background-color: $color-items;
+}
+
+
 // Appartition des cartes au défilement
-.revealChoose-00 {
+.revealChoose-1 {
     opacity: 0;
     transform: translateY(-70px);
 }

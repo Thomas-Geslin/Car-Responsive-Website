@@ -1,42 +1,64 @@
 .luxury {
     background-color: #000;
     color: white;
-    text-align: center;
-    padding-top: 100px;
+    padding-top: 10px;
     padding-bottom: 100px;
+        &__title {
+            text-align: center;
+        }
         &__icon {
+            list-style: none;
+            text-align: center;
             display: flex;
             justify-content: space-between;
-            align-items: center;
             width: 15%;
             margin: auto;
+            margin-bottom: 70px;
             margin-top: 60px;
                 &__div {
                     width: 52px;
                     height: 52px;
                     background-color: #111213;
+                    color: $color-text;
+                    border: none;
                     border-radius: 10px;
                     position: relative;
                         &__img {
                             width: 28px;
-                            padding-top: 11px;
+                            padding-top: 5px;
                                 &--audi {
-                                    padding-top: 20px;
+                                    padding-top: 0;
                                 }
                         }
                         &:hover {
+                            cursor: pointer;
                             background-color: $color-items;
                             transition: .5s;
                         }
                 }
-        }
-        &__cards {
-            display: flex;
-            flex-wrap: wrap;
-            width: 50%;
-            margin: auto;
-            justify-content: space-between;
-        }
+            }
+            &__card {
+                background-color: hsl(219, 4%, 7%);
+                border-radius: 15px;
+                padding: 32px 24px 24px;
+                overflow: hidden;
+                    &--except {
+                        margin-top: 0;
+                    }
+                    &:hover > img {
+                        transform: translateX(-15px);
+                        transition: .5s;
+                    }
+            }
+            &__cards {
+                width: 50%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                grid-column-gap: 70px;
+                grid-row-gap: 70px;    
+                margin: auto;
+            }
 }
 
 // Apparition au défilement
@@ -53,4 +75,16 @@
 
 .revealLuxury-2 {
     transition-delay: .15s;
+}
+
+.revealLuxury-3 {
+    transition-delay: .3s;
+}
+
+.revealLuxury-4 {
+    transition-delay: .45s;
+}
+
+.revealLuxury-5 {
+    transition-delay: .6s;
 }

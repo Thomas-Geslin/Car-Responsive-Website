@@ -14,11 +14,6 @@
                 &__logo {
                     display: flex;
                     align-items: center;
-                        &:hover {
-                            color: #3A6BC3;
-                            transition: .5s;
-                            cursor: pointer;
-                        }
                         &__img {
                             width: 25px;
                             height: 25px;
@@ -97,20 +92,30 @@
                             }
                         }
                 }
-                &__button {
-                    margin: auto;
-                    background: transparent;
+                &__button{
+                    text-decoration: none;
+                    background-color: #0a0a0b;
                     color: $color-text;
-                    border-radius: 90px;
-                    border: #02D98A solid 2px;
+                    border: 2px solid #08915F;
+                    border-radius: 50%;
                     width: 70px;
                     height: 70px;
-                    margin-top: 100px;
-                    margin-bottom: 100px;
-                        &::before {
-                            border: #02D98A 2px solid;
-                            width: 94px;
-                            height: 94px;
+                    margin-top: 70px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    left: 48%;
+                        &::before{
+                            content: '';
+                            border: 2px solid #03C37C;
+                            border-radius: 50%;
+                            width: 90px;
+                            height: 90px;
+                            position: absolute;
+                            box-shadow: 0 0 12px #03C37C;
+                            transition: .3s;
+                            animation: button 3s infinite;
                         }
                         &:hover {
                             cursor: pointer;

@@ -34,8 +34,8 @@ function cardChooseIntegration () {
     const chooseDiv = document.getElementById('cardLocation')
     for(let card of chooseArray) {
         // Création de la carte
-        const cardDiv = document.createElement('div');
-        cardDiv.classList.add('choose__card');
+        const cardDiv = document.createElement('article');
+        cardDiv.classList.add('choose__card', 'swiper-slide');
         // Ajout de l'éclairage en haut à droite
         const cloud = document.createElement('div');
         cloud.classList.add('choose__card__cloud');
@@ -106,81 +106,9 @@ function cardChooseIntegration () {
 
 document.addEventListener('DOMContentLoaded', cardChooseIntegration);
 
+/* Filtre div Luxury */
+let mixer = mixitup('.container');
 
-
-/* Intégration des cartes de la div Luxury */
-let luxuryArray = [{
-    brand: 'Tesla',
-    name: 'Model X',
-    img: './assets/img/featured1.png',
-    price: '$98,900'
-},
-{
-    brand: 'Tesla',
-    name: 'Model 3',
-    img: './assets/img/featured2.png',
-    price: '$45,900'
-},
-{
-    brand: 'Audi',
-    name: 'E-tron',
-    img: './assets/img/featured3.png',
-    price: '$175,900'
-},
-{
-    brand: 'Porsche',
-    name: 'Boxster 987',
-    img: './assets/img/featured4.png',
-    price: '$126,900'
-},
-{
-    brand: 'Porsche',
-    name: 'Panamera',
-    img: './assets/img/featured5.png',
-    price: '$126,900'
-}]
-
-function cardLuxuryIntegration () {
-    const chooseDiv = document.getElementById('luxuryLocation')
-    for(let card of luxuryArray) {
-        // Création de la carte
-        const cardDiv = document.createElement('div');
-
-        cardDiv.classList.add('choose__card');
-        // Ajout de l'éclairage en haut à droite
-        const cloud = document.createElement('div');
-        cloud.classList.add('choose__card__cloud');
-        cardDiv.appendChild(cloud);
-        // Ajout de la marque
-        const brand = document.createElement('h3');
-        brand.classList.add('choose__card__title')
-        brand.innerText = card.brand;
-        cardDiv.appendChild(brand);
-        // Ajout du nom
-        const name = document.createElement('p');
-        name.classList.add('choose__card__subtitle');
-        name.innerText = card.name;
-        cardDiv.appendChild(name);
-        // Ajout de l'image
-        const carImg = document.createElement('img');
-        carImg.setAttribute('src', card.img);
-        carImg.classList.add('choose__card__img');
-        cardDiv.appendChild(carImg);
-        // Ajout du prix 
-        let price = document.createElement('p');
-        price.classList.add('choose__card__price');
-        price.innerText = card.price;
-        cardDiv.appendChild(price);
-        // Ajout de l'icone panier
-        let cart = document.createElement('i');
-        cart.classList.add('fa-solid', 'fa-bag-shopping', 'choose__card__cart');
-        cardDiv.appendChild(cart);
-        // Ajout de la carte au DOM
-        chooseDiv.appendChild(cardDiv);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', cardLuxuryIntegration);
 
 /* Header reste en haut de l'écran lorsqu'on défile la page */
 window.onscroll = function () {
@@ -266,7 +194,6 @@ document.querySelectorAll('[class*="revealRight-"]').forEach(function (r) {
 const handleIntersectionChoose = function (entries, observerChoose) {
     entries.forEach(function(entry) {
         if (entry.intersectionRatio > ratio) {
-            console.log('choose révélé !!!')
             entry.target.classList.add('reveal_visible-choose')
             observerChoose.unobserve(entry.target)
         }
@@ -276,6 +203,21 @@ const handleIntersectionChoose = function (entries, observerChoose) {
 const observerChoose = new IntersectionObserver(handleIntersectionChoose, options)
 document.querySelectorAll('[class*="revealChoose-"]').forEach(function (r) {
     observerChoose.observe(r)
+})
+
+// Elements div Features apparaissant au défilement
+const handleIntersectionFeature = function (entries, observerFeature) {
+    entries.forEach(function(entry) {
+        if (entry.intersectionRatio > ratio) {
+            entry.target.classList.add('reveal_visible-feature')
+            observerFeature.unobserve(entry.target)
+        }
+    })
+}
+  
+const observerFeature = new IntersectionObserver(handleIntersectionFeature, options)
+document.querySelectorAll('[class*="revealFeature-"]').forEach(function (r) {
+    observerFeature.observe(r)
 })
 
 // Elements div Luxury apparaissant au défilement
@@ -322,3 +264,29 @@ const observerFooter = new IntersectionObserver(handleIntersectionFooter, option
 document.querySelectorAll('[class*="revealFooter-"]').forEach(function (r) {
     observerFooter.observe(r)
 })
+
+
+/* Slider div choose */
+function swiperWaiting () { 
+    let swiperChoose = new Swiper('.swiper', {
+        loop: true,
+        spaceBetween: 24,
+        slidesPerView: "auto",
+        grabCursor: true,
+
+        pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+        },
+        breakpoints: {
+            768: {
+            slidesPerView: 3,
+            },
+            1024: {
+            spaceBetween: 48,
+            },
+        },
+    });
+}
+
+document.addEventListener('DOMContentLoaded', swiperWaiting);
