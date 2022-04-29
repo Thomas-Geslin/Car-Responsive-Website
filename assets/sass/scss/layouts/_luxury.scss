@@ -11,10 +11,12 @@
             text-align: center;
             display: flex;
             justify-content: space-between;
-            width: 15%;
+            width: 16%;
+            min-width: 345px;
             margin: auto;
             margin-bottom: 70px;
             margin-top: 60px;
+            padding-left: 0;
                 &__div {
                     width: 52px;
                     height: 52px;
@@ -40,6 +42,8 @@
             &__card {
                 background-color: hsl(219, 4%, 7%);
                 border-radius: 15px;
+                width: 200px;
+                height: 250px;
                 padding: 32px 24px 24px;
                 overflow: hidden;
                     &--except {
@@ -51,14 +55,27 @@
                     }
             }
             &__cards {
-                width: 50%;
                 display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(3, 248px);
                 grid-template-rows: repeat(2, 1fr);
                 grid-column-gap: 70px;
-                grid-row-gap: 70px;    
-                margin: auto;
+                grid-row-gap: 70px;  
+                justify-items: center;
+                justify-content: center;
+                
             }
+    @media (max-width: 1278px) {
+        &__cards {
+            grid-template-columns: repeat(2, 248px);
+            grid-template-rows: repeat(3, 1fr);
+        } 
+    }
+    @media (max-width: 650px) {
+        &__cards {
+            grid-template-columns: repeat(1, 248px);
+            grid-template-rows: repeat(5, 1fr);
+        } 
+    }
 }
 
 // Apparition au défilement

@@ -18,7 +18,7 @@
                 border-radius: 15px;
                 text-align: center;
                 width: 198px;
-                padding: 20px 24px;
+                padding: 16px 10px;
                 position: absolute;
                 right: 30px;
                 bottom: -45px;
@@ -29,9 +29,10 @@
                         margin-bottom: 12px;
                     }
                     &__text {
-                        font-size: 15px;
+                        width: 80%;
+                        font-size: 14px;
                         color:  $color-text-third;
-                        margin: 0;
+                        margin: auto;
                     }
                 }
         }
@@ -39,6 +40,7 @@
             flex-direction: column;
             margin-left: 70px;
             width: 20%;
+            min-width: 360px;
                 &__title {
                     width: 70%;
                     line-height: 35px;
@@ -58,6 +60,35 @@
                     color: white;
                 }
         }
+
+    @media (max-width: $dekstop-breakpoint) {
+        &__supercharge {
+            &__img {
+                width: 310px;
+            }
+            &__card {
+                padding: 20px 6px;
+                right: 0;
+                bottom: 0;
+            }
+        }
+    }
+    @media (max-width: $tablet-breakpoint) {
+        flex-direction: column;
+            &__supercharge {
+                margin: auto;
+                    &__card {
+                        bottom: -30px;
+                    }
+            }
+            &__info {
+                width: 80%;
+                    &__title {
+                        width: 50%;
+                        margin-top: 80px;
+                    }
+            }
+    }
 }
 
 // Apparation des éléments au défilement

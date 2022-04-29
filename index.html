@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/node_modules/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/sass/css/style.css">
     <link rel="icon" href="assets/img/favicon.png">
-    <title>Responsive Car Website</title>
+    <title>Elecar</title>
 </head>
 
 <body>
@@ -18,12 +18,23 @@
                 <img class="home__header__logo__img" src="assets/img/favicon.png" alt="logo du site">
                 <p>Elecar</p>
             </div>
-            <ul>
+
+            <ul class="home__header__list">
                 <li><a href="#acceuil">Acceuil</a></li>
                 <li><a href="#about">À Propos</a></li>
                 <li><a href="#choose">Populaire</a></li>
                 <li><a href="#luxury">En vedette</a></li>
             </ul>
+
+            <div class="home__header__tablet" id="tablet-menu">
+                <i class="fa-solid fa-bars home__header__tablet__menu"></i>
+                <ul class="home__header__tablet__list--close" id="menuList">
+                    <li id="first"><a href="#acceuil">Acceuil</a></li>
+                    <li><a href="#about">À Propos</a></li>
+                    <li><a href="#choose">Populaire</a></li>
+                    <li><a href="#luxury">En vedette</a></li>
+                </ul>
+            </div>
         </header>
 
         <article class="home__article">
@@ -211,17 +222,21 @@
     
     <!-- =============== OFFERS =============== -->
     <div class="offers">
-        <img class="offers__bg" src="./assets/img/offer-bg.png">
+            <img class="offers__bg" src="./assets/img/offer-bg.png">
 
-        <div class="offers__info revealLeft-1">
-            <h2 class="offers__info__title">Vous Voulez Recevoir Des Offres Spéciales ?</h2>
-            <p class="offers__info__text">Soyez le premier à recevoir toutes les informations à propos de nos nouveaux produits et voitures par email en vous inscrivant à notre newsteller.</p>
-            <a class="offers__info__button">Abonnez-Vous</a>
+        <div class="offers__flex">
+            <div class="offers__info revealLeft-1">
+                <h2 class="offers__info__title">Vous Voulez Recevoir Des Offres Spéciales ?</h2>
+                <p class="offers__info__text">Soyez le premier à recevoir toutes les informations à propos de nos nouveaux produits et voitures par email en vous inscrivant à notre newsteller.</p>
+                <a class="offers__info__button">Abonnez-Vous</a>
+            </div>
+
+            <img class="offers__img revealRight-1" src="./assets/img/offer.png" alt="voiture Porsche vue de côté">
         </div>
-
-        <img class="offers__img revealRight-1" src="./assets/img/offer.png" alt="voiture Porsche vue de côté">
     </div>
+    
 
+    <!-- =============== ICONS =============== -->
     <div class="icons">
         <div class="icons__grid">
             <img class="icons__grid__img revealIcon-1" src="./assets/img/logo1.png" alt="icone Porsche">

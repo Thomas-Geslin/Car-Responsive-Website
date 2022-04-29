@@ -6,11 +6,14 @@
             height: 436px;
             width: 100%;
         }
+        &__flex {
+            display: flex;
+            justify-content: center;
+            padding-top: 130px;
+        }
         &__info {
             width: 30%;
-            position: relative;
-            top: 140px;
-            left: 400px;
+            min-width: 450px;
                 &__title {
                     width: 50%;
                     margin-top: 0;
@@ -37,10 +40,31 @@
         }
         &__img {
             width: 450px;
-            position: absolute;
-            right: 400px;
-            top: 140px;
+            height: 208px;
         }
+    @media (max-width: $dekstop-breakpoint) {
+        &__bg {
+            height: 850px;
+        }
+        &__flex {
+            flex-direction: column;
+            align-items: center;
+        }
+        &__info {
+            text-align: center;
+                &__title {
+                    margin: auto;
+                    margin-bottom: 40px;
+                }
+                &__text {
+                    margin: auto;
+                    margin-bottom: 60px;
+                }
+        }
+        &__img {
+            margin-top: 120px;
+        }
+    }
 }
 
 // Apparition au défilement 

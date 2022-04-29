@@ -106,8 +106,11 @@ function cardChooseIntegration () {
 
 document.addEventListener('DOMContentLoaded', cardChooseIntegration);
 
+
+
 /* Filtre div Luxury */
 let mixer = mixitup('.container');
+
 
 
 /* Header reste en haut de l'écran lorsqu'on défile la page */
@@ -119,6 +122,23 @@ window.onscroll = function () {
         header.classList.remove('onscroll');
     }
 }
+
+/* Header change quand on réduit la taille de la fenêtre */
+const tabletMenu = document.getElementById('tablet-menu');
+const list = document.getElementById('menuList');
+let isClose = true;
+
+tabletMenu.addEventListener('click', function() {
+    if(isClose) {
+        list.classList.add('home__header__tablet__list--open');
+        list.classList.remove('home__header__tablet__list--close');
+        isClose = false;
+    } else if (!isClose) {
+        list.classList.add('home__header__tablet__list--close');
+        list.classList.remove('home__header__tablet__list--open');
+        isClose = true;
+    }
+})
 
 
 
@@ -264,6 +284,7 @@ const observerFooter = new IntersectionObserver(handleIntersectionFooter, option
 document.querySelectorAll('[class*="revealFooter-"]').forEach(function (r) {
     observerFooter.observe(r)
 })
+
 
 
 /* Slider div choose */

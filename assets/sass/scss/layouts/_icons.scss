@@ -27,6 +27,30 @@
                         }
                 }
         }
+    @media (max-width: $dekstop-breakpoint) {
+        padding-top: 180px;
+            &__grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                grid-column-gap: 50px;
+                grid-row-gap: 50px;
+                    &__img {
+                        margin: auto;
+                        width: 40px;
+                        height: 40px;
+                            &--audi {
+                                height: 14px;
+                            }
+                            &--lambo {
+                                height: 45px;
+                            }
+                            &--mitsu {
+                                height: 34px;
+                            }
+                    }
+            }
+    }
 }
 
 // Apparition au défilement

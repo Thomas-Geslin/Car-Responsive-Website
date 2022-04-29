@@ -4,8 +4,10 @@
     padding-top: 100px;
     padding-bottom: 100px;
         &__title {
+            text-align: center;
             font-size: 25px;
             width: 20%;
+            min-width: 380px;
             margin: auto;
             margin-bottom: 60px;
         }
@@ -82,6 +84,11 @@
                     left: -50px;
                 }
         }
+    @media (max-width: $tablet-breakpoint) {
+        .swiper {
+            width: 300px;
+        }
+    }
 }
 
 // Styles du Swiper

@@ -10485,15 +10485,15 @@ readers do not read off random characters that represent icons */
   color: #F1F2F3;
 }
 .home__header {
-  height: 80px;
   display: flex;
   justify-content: space-around;
   font-size: 16px;
   font-weight: bold;
   align-items: center;
   position: fixed;
-  left: 0;
-  right: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 1000;
 }
 .home__header__logo {
   display: flex;
@@ -10504,20 +10504,23 @@ readers do not read off random characters that represent icons */
   height: 25px;
   margin-right: 5px;
 }
-.home__header ul {
-  width: 20%;
+.home__header__list {
+  min-width: 380px;
   display: flex;
   justify-content: space-between;
   list-style-type: none;
 }
-.home__header ul a {
+.home__header__list a {
   text-decoration: none;
   color: #F1F2F3;
 }
-.home__header ul a:hover {
+.home__header__list a:hover {
   color: #3A6BC3;
   transition: 0.5s;
   cursor: pointer;
+}
+.home__header__tablet {
+  display: none;
 }
 .home__article {
   display: flex;
@@ -10554,9 +10557,9 @@ readers do not read off random characters that represent icons */
   margin: auto;
 }
 .home__article__info {
-  width: 28%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  column-gap: 85px;
   margin: auto;
   margin-top: 60px;
 }
@@ -10612,6 +10615,7 @@ readers do not read off random characters that represent icons */
   background-color: rgba(55, 74, 109, 0.5);
   filter: blur(112px);
   border-radius: 50%;
+  z-index: 0;
 }
 .home__bg--02 {
   width: 500px;
@@ -10622,12 +10626,94 @@ readers do not read off random characters that represent icons */
   background-color: rgba(55, 74, 109, 0.5);
   filter: blur(112px);
   border-radius: 50%;
+  z-index: 0;
+}
+@media (max-width: 768px) {
+  .home__header {
+    justify-content: space-between;
+  }
+  .home__header__logo {
+    margin-left: 40px;
+  }
+  .home__header__list {
+    display: none;
+  }
+  .home__header__tablet {
+    display: block;
+  }
+  .home__header__tablet__menu {
+    margin-right: 40px;
+    font-size: 18px;
+  }
+  .home__header__tablet__menu:hover {
+    cursor: pointer;
+  }
+  .home__header__tablet__list--close {
+    display: none;
+  }
+  .home__header__tablet__list--open {
+    background-color: #ffffff1a;
+    list-style-type: none;
+    text-align: center;
+    position: fixed;
+    top: -15px;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(96px);
+    transition: 0.3s;
+  }
+  .home__header__tablet__list--open li {
+    margin-top: 75px;
+    font-size: 18px;
+  }
+  .home__header__tablet__list--open a {
+    color: #F1F2F3;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .home__header__tablet__list--open a:hover {
+    color: #3A6BC3;
+    transition: 0.5s;
+  }
+  .home__header__tablet__list--open #first {
+    margin-top: 180px;
+  }
+  .home__article__title {
+    font-size: 26px;
+  }
+  .home__article__car {
+    font-size: 17px;
+  }
+  .home__article__type__icon {
+    font-size: 12px;
+  }
+  .home__article__type__text {
+    font-size: 13px;
+  }
+  .home__article__img {
+    width: 280px;
+  }
+  .home__article__info {
+    column-gap: 50px;
+  }
+  .home__article__info__div__icon {
+    font-size: 14px;
+  }
+  .home__article__info__div__number {
+    font-size: 20px;
+  }
+  .home__article__info__div__text {
+    font-size: 13px;
+  }
+  .home__article__button {
+    left: 44%;
+  }
 }
 
 .onscroll {
   background-color: #0a0a0b;
   border-radius: 0 0 15px 15px;
-  z-index: 1000;
 }
 
 [class*=revealHome-] {
@@ -10667,15 +10753,15 @@ readers do not read off random characters that represent icons */
 }
 
 .revealHomeBottom-2 {
-  transition-delay: 0.7s;
+  transition-delay: 0.75s;
 }
 
 .revealHomeBottom-3 {
-  transition-delay: 0.8s;
+  transition-delay: 0.9s;
 }
 
 .revealHomeBottom-4 {
-  transition-delay: 1s;
+  transition-delay: 1.05s;
 }
 
 .about {
@@ -10700,7 +10786,7 @@ readers do not read off random characters that represent icons */
   border-radius: 15px;
   text-align: center;
   width: 198px;
-  padding: 20px 24px;
+  padding: 16px 10px;
   position: absolute;
   right: 30px;
   bottom: -45px;
@@ -10712,14 +10798,16 @@ readers do not read off random characters that represent icons */
   margin-bottom: 12px;
 }
 .about__supercharge__card__text {
-  font-size: 15px;
+  width: 80%;
+  font-size: 14px;
   color: #BABEC4;
-  margin: 0;
+  margin: auto;
 }
 .about__info {
   flex-direction: column;
   margin-left: 70px;
   width: 20%;
+  min-width: 360px;
 }
 .about__info__title {
   width: 70%;
@@ -10737,6 +10825,34 @@ readers do not read off random characters that represent icons */
   border: none;
   border-radius: 5px;
   color: white;
+}
+@media (max-width: 1024px) {
+  .about__supercharge__img {
+    width: 310px;
+  }
+  .about__supercharge__card {
+    padding: 20px 6px;
+    right: 0;
+    bottom: 0;
+  }
+}
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+  }
+  .about__supercharge {
+    margin: auto;
+  }
+  .about__supercharge__card {
+    bottom: -30px;
+  }
+  .about__info {
+    width: 80%;
+  }
+  .about__info__title {
+    width: 50%;
+    margin-top: 80px;
+  }
 }
 
 .revealLeft-1 {
@@ -10762,8 +10878,10 @@ readers do not read off random characters that represent icons */
   padding-bottom: 100px;
 }
 .choose__title {
+  text-align: center;
   font-size: 25px;
   width: 20%;
+  min-width: 380px;
   margin: auto;
   margin-bottom: 60px;
 }
@@ -10840,6 +10958,11 @@ readers do not read off random characters that represent icons */
   top: -50px;
   left: -50px;
 }
+@media (max-width: 768px) {
+  .choose .swiper {
+    width: 300px;
+  }
+}
 
 .swiper {
   width: 50%;
@@ -10882,11 +11005,12 @@ readers do not read off random characters that represent icons */
   width: 650px;
   position: absolute;
   top: 100px;
-  right: 630px;
+  right: 30%;
   transform: rotate(-22deg);
 }
 .features__car {
   position: relative;
+  right: 0;
   width: 200px;
 }
 .features__card {
@@ -10923,6 +11047,11 @@ readers do not read off random characters that represent icons */
   position: relative;
   top: -420px;
   left: -100px;
+}
+@media (max-width: 768px) {
+  .features__map {
+    right: -25%;
+  }
 }
 
 [class*=revealFeature-] {
@@ -10962,10 +11091,12 @@ readers do not read off random characters that represent icons */
   text-align: center;
   display: flex;
   justify-content: space-between;
-  width: 15%;
+  width: 16%;
+  min-width: 345px;
   margin: auto;
   margin-bottom: 70px;
   margin-top: 60px;
+  padding-left: 0;
 }
 .luxury__icon__div {
   width: 52px;
@@ -10991,6 +11122,8 @@ readers do not read off random characters that represent icons */
 .luxury__card {
   background-color: #111213;
   border-radius: 15px;
+  width: 200px;
+  height: 250px;
   padding: 32px 24px 24px;
   overflow: hidden;
 }
@@ -11002,13 +11135,25 @@ readers do not read off random characters that represent icons */
   transition: 0.5s;
 }
 .luxury__cards {
-  width: 50%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 248px);
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 70px;
   grid-row-gap: 70px;
-  margin: auto;
+  justify-items: center;
+  justify-content: center;
+}
+@media (max-width: 1278px) {
+  .luxury__cards {
+    grid-template-columns: repeat(2, 248px);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+@media (max-width: 650px) {
+  .luxury__cards {
+    grid-template-columns: repeat(1, 248px);
+    grid-template-rows: repeat(5, 1fr);
+  }
 }
 
 [class*=revealLuxury-] {
@@ -11047,11 +11192,14 @@ readers do not read off random characters that represent icons */
   height: 436px;
   width: 100%;
 }
+.offers__flex {
+  display: flex;
+  justify-content: center;
+  padding-top: 130px;
+}
 .offers__info {
   width: 30%;
-  position: relative;
-  top: 140px;
-  left: 400px;
+  min-width: 450px;
 }
 .offers__info__title {
   width: 50%;
@@ -11078,9 +11226,30 @@ readers do not read off random characters that represent icons */
 }
 .offers__img {
   width: 450px;
-  position: absolute;
-  right: 400px;
-  top: 140px;
+  height: 208px;
+}
+@media (max-width: 1024px) {
+  .offers__bg {
+    height: 850px;
+  }
+  .offers__flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  .offers__info {
+    text-align: center;
+  }
+  .offers__info__title {
+    margin: auto;
+    margin-bottom: 40px;
+  }
+  .offers__info__text {
+    margin: auto;
+    margin-bottom: 60px;
+  }
+  .offers__img {
+    margin-top: 120px;
+  }
 }
 
 .revealLeft-1 {
@@ -11128,6 +11297,32 @@ readers do not read off random characters that represent icons */
 .icons__grid__img:hover {
   opacity: 1;
   transition: 0.5s;
+}
+@media (max-width: 1024px) {
+  .icons {
+    padding-top: 180px;
+  }
+  .icons__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+  }
+  .icons__grid__img {
+    margin: auto;
+    width: 40px;
+    height: 40px;
+  }
+  .icons__grid__img--audi {
+    height: 14px;
+  }
+  .icons__grid__img--lambo {
+    height: 45px;
+  }
+  .icons__grid__img--mitsu {
+    height: 34px;
+  }
 }
 
 [class*=revealIcon-] {
@@ -11193,10 +11388,6 @@ readers do not read off random characters that represent icons */
   height: 32px;
   margin-right: 5px;
 }
-.footer__link__div__logo:hover {
-  color: #3A6BC3;
-  transition: 0.5s;
-}
 .footer__link__div__text {
   color: #BABEC4;
   margin-top: 0;
@@ -11226,6 +11417,25 @@ readers do not read off random characters that represent icons */
   color: #F1F2F3;
   transition: 0.5s;
   cursor: pointer;
+}
+@media (max-width: 1024px) {
+  .footer__link {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .footer {
+    padding-bottom: 0;
+  }
+  .footer__link {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
 }
 
 [class*=revealFooter-] {
